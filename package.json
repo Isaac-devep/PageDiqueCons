@@ -1,0 +1,40 @@
+{
+  "name": "webdiqueconsultoria-en",
+  "version": "1.0.0",
+  "description": "Sitio DIQUE Consultoría S.A.S Bic (React + TS + esbuild + Tailwind)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm-run-all -p dev:esbuild css:dev",
+    "dev:esbuild": "esbuild src/main.tsx --bundle --outfile=dist/assets/app.js --public-path=/assets --loader:.ts=ts --loader:.tsx=tsx --loader:.css=css --loader:.png=file --loader:.jpg=file --loader:.jpeg=file --loader:.svg=file --asset-names=[name]-[hash] --jsx=automatic --sourcemap --watch --servedir=dist --alias:@=./src",
+    "css:dev": "tailwindcss -i src/styles/tailwind.css -o dist/assets/app.css -w",
+    "build": "npm-run-all -p build:esbuild css:build",
+    "build:esbuild": "esbuild src/main.tsx --bundle --outfile=dist/assets/app.js --public-path=/assets --loader:.ts=ts --loader:.tsx=tsx --loader:.css=css --loader:.png=file --loader:.jpg=file --loader:.jpeg=file --loader:.svg=file --asset-names=[name]-[hash] --jsx=automatic --sourcemap --minify --alias:@=./src",
+    "css:build": "tailwindcss -i src/styles/tailwind.css -o dist/assets/app.css --minify",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@radix-ui/react-slot": "^1.2.3",
+    "lucide-react": "^0.548.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.25.11",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.3"
+  }
+}
