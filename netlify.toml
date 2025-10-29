@@ -1,0 +1,21 @@
+[build]
+  command = "npm ci && npm run build:all"
+  publish = "dist"
+
+# SPA fallback por subcarpetas /en y /es (aunque uses hash, deja esto listo)
+[[redirects]]
+  from = "/en"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/es"
+  to = "/es/index.html"
+  status = 200
+[[redirects]]
+  from = "/es/*"
+  to = "/es/index.html"
+  status = 200
