@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-engle.png";
 import revitCover from "@/assets/revitservices.jpg";
 import whatIsRevitImg from "@/assets/whatisrevit.jpg";
 import revite from "@/assets/ourrevitmodellingservice.jpg";

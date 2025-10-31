@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-engle.png";
 
 export default function CADPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -196,31 +196,6 @@ export default function CADPage() {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* 1 */}
-            <Card className="bg-neutral-900 border-neutral-800 p-6">
-              <p className="text-[#ED1844] text-xs font-bold mb-2">01.</p>
-              <h4 className="text-white font-black text-lg mb-3">
-                Architectural CAD Drafting
-              </h4>
-              <p className="text-neutral-300 text-sm leading-relaxed">
-                Architectural and construction plans, elevations, sections,
-                details, and layouts—ready for coordination with BIM/Revit and
-                compliant with applicable standards.
-              </p>
-            </Card>
-
-            {/* 2 */}
-            <Card className="bg-neutral-900 border-neutral-800 p-6">
-              <p className="text-[#ED1844] text-xs font-bold mb-2">02.</p>
-              <h4 className="text-white font-black text-lg mb-3">
-                Structural CAD Drafting
-              </h4>
-              <p className="text-neutral-300 text-sm leading-relaxed">
-                Structural general arrangements, rebar detailing, fabrication
-                and erection drawings—precision output with change control.
-              </p>
-            </Card>
-
             {/* 3 */}
             <Card className="bg-neutral-900 border-neutral-800 p-6">
               <p className="text-[#ED1844] text-xs font-bold mb-2">03.</p>

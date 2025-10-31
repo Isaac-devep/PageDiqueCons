@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Send, CheckCircle2, AlertTriangle } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-engle.png";
 
 /* =======================================================================
    EmailJS envs SIN import.meta (compatible con bundles IIFE)

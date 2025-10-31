@@ -16,8 +16,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-engle.png";
 import icono from "@/assets/icono.png";
+import cadImg from "@/assets/services-cad.jpg";
+import revitImg from "@/assets/services-revit.jpg";
+import bimImg from "@/assets/services-bim.jpg";
+import gisImg from "@/assets/services-gis.jpg";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -261,7 +265,17 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* CAD Services */}
-            <Card className="group hover:scale-[1.02] transition-transform duration-300">
+            <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
+              {/* media */}
+              <div className="aspect-[16/9] w-full">
+                <img
+                  src={cadImg}
+                  alt="CAD services - DIQUE"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-start gap-5 p-8">
                 <div className="p-4 bg-gradient-to-br from-[#00ACBD]/20 to-[#00ACBD]/5 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <Ruler className="h-10 w-10 text-[#00ACBD]" />
@@ -297,7 +311,6 @@ export default function App() {
                     ))}
                   </ul>
 
-                  {/* Botón Ver servicio */}
                   <div className="mt-6">
                     <Button asChild className="mt-6">
                       <a href="#/services/cad" aria-label="Ver servicio CAD">
@@ -310,7 +323,16 @@ export default function App() {
             </Card>
 
             {/* REVIT Modelling Services */}
-            <Card className="group hover:scale-[1.02] transition-transform duration-300">
+            <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
+              <div className="aspect-[16/9] w-full">
+                <img
+                  src={revitImg}
+                  alt="Revit Modelling - DIQUE"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-start gap-5 p-8">
                 <div className="p-4 bg-gradient-to-br from-[#0077BE]/20 to-[#0077BE]/5 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <Box className="h-10 w-10 text-[#0077BE]" />
@@ -346,7 +368,6 @@ export default function App() {
                     ))}
                   </ul>
 
-                  {/* Botón Ver servicio */}
                   <div className="mt-6">
                     <Button asChild variant="outline">
                       <a
@@ -362,7 +383,16 @@ export default function App() {
             </Card>
 
             {/* BIM Services */}
-            <Card className="group hover:scale-[1.02] transition-transform duration-300">
+            <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
+              <div className="aspect-[16/9] w-full">
+                <img
+                  src={bimImg}
+                  alt="BIM Services - DIQUE"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-start gap-5 p-8">
                 <div className="p-4 bg-gradient-to-br from-[#008BBE]/20 to-[#008BBE]/5 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <Building2 className="h-10 w-10 text-[#008BBE]" />
@@ -398,7 +428,6 @@ export default function App() {
                     ))}
                   </ul>
 
-                  {/* Botón Ver servicio */}
                   <div className="mt-6">
                     <Button asChild>
                       <a
@@ -406,8 +435,7 @@ export default function App() {
                         className="inline-flex items-center"
                         aria-label="View BIM service"
                       >
-                        Ver servicio
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        Ver servicio <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -416,7 +444,16 @@ export default function App() {
             </Card>
 
             {/* GIS Services */}
-            <Card className="group hover:scale-[1.02] transition-transform duration-300">
+            <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
+              <div className="aspect-[16/9] w-full">
+                <img
+                  src={gisImg}
+                  alt="GIS Services - DIQUE"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-start gap-5 p-8">
                 <div className="p-4 bg-gradient-to-br from-[#ED1844]/20 to-[#ED1844]/5 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                   <Map className="h-10 w-10 text-[#ED1844]" />
@@ -453,7 +490,6 @@ export default function App() {
                     ))}
                   </ul>
 
-                  {/* Botón Ver servicio */}
                   <div className="mt-6">
                     <Button asChild variant="outline">
                       <a

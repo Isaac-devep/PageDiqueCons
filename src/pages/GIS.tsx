@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import logo from "@/assets/logoblanco.png";
+import logo from "@/assets/logo-engle-blanco.png";
+import logoColor from "@/assets/logo-engle.png";
 
 /**
  * GIS Service Page
@@ -459,7 +460,7 @@ export default function GISPage() {
             <div className="col-span-2">
               <div className="flex items-center gap-3 mb-6">
                 <img
-                  src={logo}
+                  src={logoColor}
                   alt="DIQUE CONSULTORÍA S.A.S Bic"
                   className="h-10 md:h-12 lg:h-14 xl:h-16 w-auto select-none object-contain"
                 />
