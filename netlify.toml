@@ -1,21 +1,11 @@
 [build]
-  command = "npm ci && npm run build:all"
+  command = "npm run build"
   publish = "dist"
 
-# SPA fallback por subcarpetas /en y /es (aunque uses hash, deja esto listo)
-[[redirects]]
-  from = "/en"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/es"
-  to = "/es/index.html"
-  status = 200
-[[redirects]]
-  from = "/es/*"
-  to = "/es/index.html"
-  status = 200
+  # (opcional) si usas monorepo, aquí NO pongas nada porque tu base es la raíz
+  # base = "/"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Si tuvieras problemas con esbuild en CI:
+  # CI = "false"
