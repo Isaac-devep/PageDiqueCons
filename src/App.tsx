@@ -313,8 +313,8 @@ export default function App() {
 
                   <div className="mt-6">
                     <Button asChild className="mt-6">
-                      <a href="#/services/cad" aria-label="Ver servicio CAD">
-                        Ver servicio
+                      <a href="#/services/cad" aria-label="View service CAD">
+                        View service
                       </a>
                     </Button>
                   </div>
@@ -374,7 +374,7 @@ export default function App() {
                         href="#/services/revit"
                         className="inline-flex items-center"
                       >
-                        Ver servicio <ArrowRight className="ml-2 h-4 w-4" />
+                        View service <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -435,7 +435,7 @@ export default function App() {
                         className="inline-flex items-center"
                         aria-label="View BIM service"
                       >
-                        Ver servicio <ArrowRight className="ml-2 h-4 w-4" />
+                        View service <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -496,7 +496,7 @@ export default function App() {
                         href="#/services/gis"
                         className="inline-flex items-center"
                       >
-                        Ver servicio <ArrowRight className="ml-2 h-4 w-4" />
+                        View service <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>

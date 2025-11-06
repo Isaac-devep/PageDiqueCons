@@ -22,26 +22,26 @@ import logoColor from "@/assets/logo-engle.png";
 
 /**
  * GIS Service Page
- * - Header transparente con auto-hide on scroll (como BIM)
- * - Hero con palabra rotativa y animación descendente
- * - Overview
- * - Grid de servicios (cards)
+ * - Transparent header with auto-hide on scroll
+ * - Hero with rotating word + slide-down animation
+ * - Overview (English copy)
+ * - Services grid (includes Landscape Analysis)
  * - Workflow / Timeline
- * - Tech Stack badges
- * - Case Studies light
- * - CTA + Footer reutilizado
+ * - Tech stack badges
+ * - Light case studies
+ * - CTA + reused footer
  */
 export default function GISPage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hideHeader, setHideHeader] = useState(false);
   const [lastY, setLastY] = useState(0);
 
-  // Forzar scroll al hero al montar
+  // Force scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
 
-  // Auto-esconder header al hacer scroll down, mostrar al subir
+  // Auto-hide header on scroll down, show on scroll up
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
@@ -53,7 +53,7 @@ export default function GISPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastY]);
 
-  // Palabras del hero
+  // Hero rotating words
   const words = useMemo(() => ["MAP", "ANALYZE", "DECIDE"], []);
   const [idx, setIdx] = useState(0);
   const [animateKey, setAnimateKey] = useState(0);
@@ -67,7 +67,7 @@ export default function GISPage() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
-      {/* =================== HEADER (transparente + auto-hide) =================== */}
+      {/* =================== HEADER =================== */}
       <header
         className={`fixed inset-x-0 top-0 z-[60] bg-transparent transition-transform duration-300 ${
           hideHeader ? "-translate-y-full" : "translate-y-0"
@@ -77,7 +77,7 @@ export default function GISPage() {
           <a href="#/" className="inline-flex items-center gap-3">
             <img
               src={logo}
-              alt="DIQUE CONSULTORÍA S.A.S Bic"
+              alt="DIQUE CONSULTORIA S.A.S BIC"
               className="h-20 md:h-24 w-auto object-contain select-none"
             />
           </a>
@@ -112,7 +112,6 @@ export default function GISPage() {
               asChild
               className="bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur px-4"
             >
-              {/* ✅ Ahora va a la página de contacto */}
               <a href="#/contact">Contact Us</a>
             </Button>
           </div>
@@ -150,8 +149,6 @@ export default function GISPage() {
                   {l.label}
                 </a>
               ))}
-
-              {/* ✅ Entrada directa a Contact en móvil */}
               <a
                 href="#/contact"
                 className="text-white/90 hover:text-white text-sm font-semibold tracking-wide"
@@ -169,7 +166,7 @@ export default function GISPage() {
         id="gis-hero"
         className="relative min-h-screen flex items-center"
       >
-        {/* Fondo con gradiente + trama sutil */}
+        {/* Background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-[#001018] via-[#001F2A] to-[#022e3f]" />
           <div
@@ -234,7 +231,7 @@ export default function GISPage() {
           </div>
         </div>
 
-        {/* keyframes usados por el hero */}
+        {/* Keyframes for hero */}
         <style>{`
           @keyframes slideDownFade {
             0% { opacity: 0; transform: translateY(-24px); }
@@ -256,20 +253,23 @@ export default function GISPage() {
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6">
             Geographic Information System Services
           </h2>
+
           <p className="text-neutral-700 text-lg leading-relaxed">
-            We design and operate GIS ecosystems that support{" "}
-            <span className="font-semibold">
-              urban development, environmental management, infrastructure
-              planning and tourism
-            </span>
-            . Our approach combines standards-compliant data models, automated
-            workflows and clear visual communication so stakeholders can make
-            confident decisions.
+            Our Geographic Information System (GIS) Services offer powerful
+            tools for spatial analysis, planning, and decision-making. We
+            specialize in <strong>Basic Cartography</strong>,{" "}
+            <strong>Landscape Analysis</strong>, and comprehensive GIS solutions
+            that support <strong>urban development</strong>,{" "}
+            <strong>environmental management</strong>, and{" "}
+            <strong>tourism planning</strong>. By integrating geographic data
+            with design and infrastructure insights, we enable clients to make
+            smarter, data-driven decisions that respect and enhance the natural
+            and built environment.
           </p>
         </div>
       </section>
 
-      {/* =================== SERVICES GRID (cards) =================== */}
+      {/* =================== SERVICES GRID =================== */}
       <section
         id="services-grid"
         className="relative z-10 py-20 px-4 bg-gradient-to-b from-slate-50 to-white"
@@ -280,6 +280,7 @@ export default function GISPage() {
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Basic Cartography */}
             <ServiceCard
               icon={Map}
               title="Basic Cartography"
@@ -290,19 +291,23 @@ export default function GISPage() {
               ]}
               color="#00ACBD"
             />
+
+            {/* Landscape Analysis */}
             <ServiceCard
-              icon={Layers}
-              title="Spatial Analysis"
+              icon={Route}
+              title="Landscape Analysis"
               points={[
-                "Suitability, buffers, network & proximity",
-                "Raster/Vector processing pipelines",
-                "ModelBuilder / PyQGIS automations",
+                "Terrain modelling (slope, aspect, hillshade)",
+                "Viewshed / visibility & corridor analysis",
+                "Land cover & change detection studies",
               ]}
-              color="#0077BE"
+              color="#16a34a"
             />
+
+            {/* Urban Development */}
             <ServiceCard
               icon={Building2}
-              title="Urban & Territorial Planning"
+              title="Urban Development"
               points={[
                 "Land-use, zoning & mobility layers",
                 "Scenario planning & impact analysis",
@@ -310,6 +315,8 @@ export default function GISPage() {
               ]}
               color="#008BBE"
             />
+
+            {/* Environmental Management */}
             <ServiceCard
               icon={TreePine}
               title="Environmental Management"
@@ -320,25 +327,17 @@ export default function GISPage() {
               ]}
               color="#2E8B57"
             />
+
+            {/* Tourism Planning */}
             <ServiceCard
               icon={Landmark}
-              title="Tourism & Culture"
+              title="Tourism Planning"
               points={[
                 "POIs, routes & service areas",
                 "Story maps & interactive guides",
                 "Visitor analytics & heatmaps",
               ]}
               color="#ED1844"
-            />
-            <ServiceCard
-              icon={Database}
-              title="Data & Interoperability"
-              points={[
-                "GeoDatabases, PostGIS, GeoPackages",
-                "OGC services (WMS/WFS/WCS/WMTS)",
-                "ETL & metadata governance",
-              ]}
-              color="#6B7280"
             />
           </div>
 
@@ -353,7 +352,7 @@ export default function GISPage() {
         </div>
       </section>
 
-      {/* =================== WORKFLOW / TIMELINE =================== */}
+      {/* =================== WORKFLOW =================== */}
       <section
         id="workflow"
         className="relative py-20 px-4 bg-white border-t border-slate-100"
@@ -453,7 +452,7 @@ export default function GISPage() {
         </div>
       </section>
 
-      {/* =================== FOOTER (igual al usado antes) =================== */}
+      {/* =================== FOOTER =================== */}
       <footer className="bg-neutral-950 text-neutral-400 py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
@@ -461,7 +460,7 @@ export default function GISPage() {
               <div className="flex items-center gap-3 mb-6">
                 <img
                   src={logoColor}
-                  alt="DIQUE CONSULTORÍA S.A.S Bic"
+                  alt="DIQUE CONSULTORIA S.A.S BIC"
                   className="h-10 md:h-12 lg:h-14 xl:h-16 w-auto select-none object-contain"
                 />
               </div>
@@ -500,7 +499,7 @@ export default function GISPage() {
               <h3 className="text-white font-bold mb-6 text-lg">Company</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  {/* About Us: ir al Home y luego scroll a #about */}
+                  {/* About Us: go to Home then scroll to #about */}
                   <a
                     href="#/"
                     className="hover:text-[#00ACBD] transition-colors flex items-center gap-2 group"
@@ -513,7 +512,6 @@ export default function GISPage() {
 
                       if (window.location.hash !== "#/") {
                         window.location.hash = "#/";
-                        // esperar a que cargue el home y luego hacer scroll
                         setTimeout(goScroll, 60);
                       } else {
                         goScroll();
@@ -525,7 +523,6 @@ export default function GISPage() {
                   </a>
                 </li>
                 <li>
-                  {/* Contact: ruta de contacto */}
                   <a
                     href="#/contact"
                     className="hover:text-[#00ACBD] transition-colors flex items-center gap-2 group"
@@ -540,7 +537,7 @@ export default function GISPage() {
 
           <div className="border-t border-neutral-800 pt-8 text-center text-sm">
             <p>
-              &copy; 2025 DIQUE CONSULTORÍA S.A.S Bic. Powered by Isaac Florez.
+              &copy; 2025 DIQUE CONSULTORIA S.A.S BIC. Powered by Isaac Florez.
             </p>
           </div>
         </div>
