@@ -517,12 +517,29 @@ export default function App() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-neutral-900 mb-6">
-                About{" "}
-                <span className="bg-gradient-to-r from-[#00ACBD] to-[#0077BE] bg-clip-text text-transparent">
-                  DIQUE CONSULTORÍA
-                </span>{" "}
-                S.A.S Bic
+              <h2 className="leading-tight tracking-tight">
+                <span className="text-neutral-900 text-4xl md:text-5xl font-black">
+                  About{" "}
+                </span>
+
+                <span className="inline md:block text-5xl md:text-6xl font-black uppercase leading-tight">
+                  {/* DI */}
+                  <span className="bg-gradient-to-r from-[#00ACBD] to-[#0077BE] bg-clip-text text-transparent">
+                    DI
+                  </span>
+                  {/* Q (fucsia -> rojo) */}
+                  <span className="inline-block px-0.5 bg-gradient-to-r from-[#FF2D55] to-[#C3002F] bg-clip-text text-transparent align-baseline">
+                    Q
+                  </span>
+                  {/* UE */}
+                  <span className="bg-gradient-to-r from-[#00ACBD] to-[#0077BE] bg-clip-text text-transparent">
+                    UE
+                  </span>{" "}
+                  {/* resto */}
+                  <span className="bg-gradient-to-r from-[#00ACBD] to-[#0077BE] bg-clip-text text-transparent">
+                    CONSULTING AND ENGINEERING
+                  </span>
+                </span>
               </h2>
               <p className="text-neutral-600 leading-relaxed mb-6 text-lg">
                 We are a leading provider of specialized technical services,
