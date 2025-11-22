@@ -28,7 +28,7 @@ export default function BIMPage() {
   const [hideHeader, setHideHeader] = useState(false);
   const [lastY, setLastY] = useState(0);
 
-  // ✅ Al montar la página de BIM, fuerza scroll al HERO (top = 0)
+  // Al montar la página de BIM, fuerza scroll al HERO (top = 0)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -68,7 +68,7 @@ export default function BIMPage() {
   const prevIndex = (index - 1 + slides.length) % slides.length;
 
   return (
-    // 👇 Importante: SIN overflow-hidden (solo oculto el overflow horizontal)
+    // Importante: SIN overflow-hidden (solo oculto el overflow horizontal)
     <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* =================== HEADER (transparent + auto-hide) =================== */}
       <header
@@ -89,7 +89,7 @@ export default function BIMPage() {
           <div className="hidden md:flex items-center gap-6">
             <a
               href="#/our-promise"
-              className="text-white/90 hover:text-white text-sm font-semibold tracking-wide"
+              className="text-white/90 hover:text:white text-sm font-semibold tracking-wide"
             >
               Our Promise
             </a>
@@ -98,7 +98,6 @@ export default function BIMPage() {
               asChild
               className="bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur px-4"
             >
-              {/* ✅ Corregido para ir a la página de contacto */}
               <a href="#/contact">Contact Us</a>
             </Button>
           </div>
@@ -168,14 +167,31 @@ export default function BIMPage() {
           <div className="min-h-screen flex flex-col justify-center">
             <AnimatedDownText key={animateKey} text={slides[index].word} />
             <div className="mt-6 h-[8px] w-40 md:w-48 bg-white/95 rounded-full origin-left animate-[grow_700ms_ease-out]" />
-            <div className="mt-10">
+
+            {/* Mensaje BIM + CTAs */}
+            <div className="mt-8 max-w-xl text-white/90 text-base md:text-lg leading-relaxed">
+              BIM coordination, clash detection and model health checks for
+              design and construction teams working in Navisworks, BIM 360 / ACC
+              and model-based delivery environments.
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
               <Button
                 asChild
-                className="bg-white text-black hover:bg-white/90 font-extrabold px-6"
+                className="bg:white text-black hover:bg-white/90 font-extrabold px-6"
               >
-                <a href="#/contact" aria-label="Get in touch">
-                  Get in touch <ArrowRight className="ml-2 h-4 w-4" />
+                <a href="#/contact" aria-label="Request a sample BIM report">
+                  Request a sample report
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/70 text-white hover:bg-white/10 px-6"
+              >
+                <a href="#services-cards">Explore BIM services</a>
               </Button>
             </div>
           </div>
@@ -198,10 +214,11 @@ export default function BIMPage() {
               time and cost while improving certainty.
             </p>
             <p>
-              We collaborate across markets delivering consistent models and
-              documentation. From residential and commercial to industrial and
-              infrastructure, we deploy robust BIM workflows aligned with best
-              practices.
+              We deliver <strong>BIM coordination, clash detection</strong>,
+              quantities, 4D/5D and model health checks using platforms such as{" "}
+              <strong>Navisworks</strong>, BIM 360 / ACC and Revit. Our
+              workflows are designed to fit into your existing design,
+              pre-construction and construction processes.
             </p>
             <p>
               Our <span className="font-bold">mission</span> is to make BIM an
@@ -213,7 +230,7 @@ export default function BIMPage() {
           </div>
           <div className="mt-8">
             <Button asChild className="px-6">
-              <a href="#services-cards">Explore more</a>
+              <a href="#services-cards">Explore BIM services</a>
             </Button>
           </div>
         </div>
@@ -234,81 +251,89 @@ export default function BIMPage() {
               title="BIM Coordination & Clash Detection"
               points={[
                 "Multidisciplinary coordination (Arch/Str/MEP)",
-                "Clash detection & resolution tracking",
-                "Navisworks/IFC collaboration",
+                "Clash detection & issue tracking in Navisworks",
+                "Federated models linked to BIM 360 / ACC & IFC",
               ]}
             />
             <ServiceCard
               icon={Boxes}
-              title="Revit Modelling (LOD 100–500)"
+              title="Revit Modeling (LOD 100–500)"
               points={[
-                "Accurate, data-rich authoring",
-                "Sheets, views & schedules aligned to standards",
-                "As-built deliverables and handover models",
+                "Accurate, data-rich Revit authoring by discipline",
+                "Sheets, views & schedules aligned to your standards",
+                "As-built / record models ready for handover",
               ]}
             />
             <ServiceCard
               icon={CalendarClock}
               title="4D/5D BIM (Time & Cost)"
               points={[
-                "4D sequencing from the model",
-                "5D quantities for cost control",
-                "What-if scenarios & simulations",
+                "4D sequencing linked to Navisworks Timeliner / schedules",
+                "5D quantities and BoQ extracted from models",
+                "What-if scenarios for phasing, logistics and cashflow",
               ]}
             />
             <ServiceCard
               icon={ScanIcon}
               title="Scan to BIM"
               points={[
-                "Point cloud ingestion & alignment",
-                "As-built modelling with tolerances",
-                "QA/QC deviation checks",
+                "Point cloud ingestion and alignment to project coordinates",
+                "As-built modeling with realistic tolerances",
+                "Deviation checks and reports for critical elements",
               ]}
             />
             <ServiceCard
               icon={Ruler}
               title="Construction Documentation"
               points={[
-                "Shop drawings & installation details",
-                "Fabrication-ready outputs",
-                "Submittals & RFIs support",
+                "Shop drawings & installation details from the model",
+                "Fabrication-ready outputs aligned to trades",
+                "Support for submittals, RFIs and field clarification",
               ]}
             />
             <ServiceCard
               icon={Receipt}
               title="Quantities & Takeoffs"
               points={[
-                "Reliable BoQ from model parameters",
-                "Custom schedules & exports",
-                "Live updates with design changes",
+                "Reliable BoQ from model parameters and classifications",
+                "Custom schedules & exports (Excel/CSV/PDF)",
+                "Updates tracked as the design evolves",
               ]}
             />
             <ServiceCard
               icon={Layers}
               title="Model Health & Standards"
               points={[
-                "Templates, naming & classification",
-                "Model audits & performance tuning",
-                "BEP and LOD execution planning",
+                "Model audits: warnings, size, performance & structure",
+                "Templates, naming & classification setup (BEP/LOD)",
+                "Health reports and recommendations for each model",
               ]}
             />
             <ServiceCard
               icon={Building2}
               title="Digital Twins & Asset Data"
               points={[
-                "Structured data for FM/CMMS",
-                "COBie/IFC handover packages",
-                "Lifecycle-ready from day one",
+                "Structured asset data for FM and CMMS platforms",
+                "COBie / IFC handover packages from BIM models",
+                "Lifecycle-ready data from day one of operations",
               ]}
             />
           </div>
 
-          <div className="mt-12">
+          {/* CTA BIM: sample report + explore */}
+          <div className="mt-12 flex flex-wrap gap-4">
             <Button
               asChild
               className="bg-neutral-900 hover:bg-neutral-800 text-white px-6"
             >
-              <a href="#/contact">Request a proposal</a>
+              <a href="#/contact">Request a sample report</a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-neutral-800 text-neutral-900 hover:bg-neutral-100 px-6"
+            >
+              <a href="#services-cards">Explore BIM services</a>
             </Button>
           </div>
         </div>
@@ -386,7 +411,7 @@ export default function BIMPage() {
                   </a>
                 </li>
                 <li>
-                  {/* Contact: apunta a la ruta de contacto (ajústala si tu router usa otra) */}
+                  {/* Contact: apunta a la ruta de contacto */}
                   <a
                     href="#/contact"
                     className="hover:text-[#00ACBD] transition-colors flex items-center gap-2 group"
@@ -409,8 +434,14 @@ export default function BIMPage() {
 
       {/* keyframes */}
       <style>{`
-        @keyframes slideDownFade { 0% {opacity:0; transform:translateY(-24px)} 100% {opacity:1; transform:translateY(0)} }
-        @keyframes grow { 0% { transform:scaleX(0) } 100% { transform:scaleX(1) } }
+        @keyframes slideDownFade { 
+          0% {opacity:0; transform:translateY(-24px)} 
+          100% {opacity:1; transform:translateY(0)} 
+        }
+        @keyframes grow { 
+          0% { transform:scaleX(0) } 
+          100% { transform:scaleX(1) } 
+        }
       `}</style>
     </div>
   );

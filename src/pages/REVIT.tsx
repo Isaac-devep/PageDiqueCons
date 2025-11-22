@@ -100,13 +100,11 @@ export default function RevitPage() {
 
     setLoading(true);
     try {
-      // Usamos las mismas claves que definiste en el template:
       const payload = {
         from_name: String(fd.get("name") || ""),
         from_email: String(fd.get("email") || ""),
         subject:
-          String(fd.get("subject") || "") ||
-          "Revit Modelling enquiry (website)",
+          String(fd.get("subject") || "") || "Revit modeling enquiry (website)",
         message:
           `Location: ${String(fd.get("location") || "N/A")}\n\n` +
           String(fd.get("message") || ""),
@@ -201,10 +199,10 @@ export default function RevitPage() {
       <section className="pt-40 pb-10 px-4 relative overflow-hidden bg-neutral-50">
         <div className="container mx-auto max-w-6xl">
           <p className="text-xs font-bold text-[#00ACBD] uppercase tracking-wider mb-2">
-            Services
+            Revit modeling for US AEC teams
           </p>
           <h1 className="text-4xl md:text-5xl font-black leading-tight">
-            Revit Modelling Services
+            Revit modeling services for US AEC teams
           </h1>
 
           {/* Big image */}
@@ -212,7 +210,7 @@ export default function RevitPage() {
             <div className="aspect-[16/7]">
               <img
                 src={revitCover}
-                alt="Revit modelling building model - DIQUE"
+                alt="Revit modeling building model - DIQUE"
                 className="w-full h-full object-cover"
                 loading="eager"
               />
@@ -220,37 +218,40 @@ export default function RevitPage() {
           </div>
 
           <p className="mt-8 text-neutral-700 max-w-3xl">
-            Our Revit Modelling Services are designed to enhance the efficiency
-            and accuracy of construction projects. We offer intelligent,
-            data-rich 3D models that integrate architectural, structural, and
-            MEP systems, supporting coordination, quantity takeoffs, and
-            lifecycle decisions.
+            We build <strong>LOD-appropriate Revit models</strong> for US
+            architects, engineers and contractors—covering architecture,
+            structure and MEP. Our team works in your templates and BIM
+            Execution Plans to deliver{" "}
+            <strong>clean, clash-ready geometry</strong>, well-structured{" "}
+            <strong>families, views, sheets and schedules</strong>, and reliable{" "}
+            <strong>as-built/record models</strong> ready for BIM 360 / ACC,
+            Navisworks and downstream uses.
           </p>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
             {[
               {
-                value: "500+",
-                label: "Projects Delivered",
+                value: "300+",
+                label: "Revit projects delivered",
                 icon: Target,
                 color: "#00ACBD",
               },
               {
                 value: "15+",
-                label: "Years Experience",
+                label: "Years in BIM production",
                 icon: Award,
                 color: "#0077BE",
               },
               {
                 value: "100+",
-                label: "Happy Clients",
+                label: "US & global AEC clients",
                 icon: Users,
                 color: "#008BBE",
               },
               {
-                value: "4",
-                label: "Core Service Lines",
+                value: "LOD 100–400",
+                label: "Typical modeling range",
                 icon: Zap,
                 color: "#ED1844",
               },
@@ -280,29 +281,42 @@ export default function RevitPage() {
         </div>
       </section>
 
-      {/* What is Revit Modelling */}
+      {/* What is Revit modeling */}
       <section className="py-16 px-4 bg-[#D9FF00]/60">
         <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* Texto */}
           <div>
             <h2 className="text-3xl md:text-4xl font-black mb-4">
-              What is Revit Modelling?
+              What is Revit modeling?
             </h2>
 
             <p className="text-neutral-800">
-              Revit Modelling is a core component of Building Information
-              Modelling (BIM) that enables precise 3D models of buildings and
-              infrastructure. It ensures all aspects of a project are planned
-              and coordinated—from architectural layouts to structural framing
-              and MEP systems.
+              Revit modeling is the core of BIM delivery:{" "}
+              <strong>data-rich 3D models</strong> that coordinate architecture,
+              structure and MEP in a single source of truth. A well-structured
+              model supports clear design intent, constructability, quantity
+              takeoffs and facility management.
             </p>
 
-            <h3 className="mt-6 font-extrabold">Key Benefits:</h3>
+            <h3 className="mt-6 font-extrabold">
+              Key benefits for US AEC teams:
+            </h3>
             <ul className="mt-3 space-y-2 text-neutral-800 list-disc pl-5">
-              <li>Enhanced visualisation and design intent</li>
-              <li>Improved multi-disciplinary coordination</li>
-              <li>Accurate quantity takeoffs and cost estimates</li>
-              <li>Reduction of rework via clash detection</li>
+              <li>
+                Clear, coordinated models that reduce RFIs and field clashes.
+              </li>
+              <li>
+                LOD-driven content (<strong>LOD 100–400/500</strong>) aligned
+                with contracts and BIM Execution Plans.
+              </li>
+              <li>
+                Reliable <strong>schedules and quantities</strong> for cost and
+                phasing.
+              </li>
+              <li>
+                <strong>As-built / record models</strong> ready for handover and
+                FM platforms.
+              </li>
             </ul>
           </div>
 
@@ -311,7 +325,7 @@ export default function RevitPage() {
             <div className="aspect-[16/10]">
               <img
                 src={whatIsRevitImg}
-                alt="Exploded Revit model - What is Revit Modelling"
+                alt="Exploded Revit model - What is Revit modeling"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -320,7 +334,7 @@ export default function RevitPage() {
         </div>
       </section>
 
-      {/* Our Revit Modelling Service */}
+      {/* Our Revit modeling service */}
       <section className="py-16 px-4 bg-neutral-950">
         <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           {/* Imagen */}
@@ -328,7 +342,7 @@ export default function RevitPage() {
             <div className="aspect-[16/10]">
               <img
                 src={revite}
-                alt="Revit modelling service preview"
+                alt="Revit modeling service preview"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -338,41 +352,53 @@ export default function RevitPage() {
           {/* Texto */}
           <div>
             <h2 className="text-3xl md:text-4xl font-black mb-4 text-white">
-              Our Revit Modelling Service
+              Our Revit modeling service
             </h2>
 
             <p className="text-neutral-300">
-              At DIQUE, we provide a comprehensive range of Revit Modelling
-              services tailored to your project needs—boosting coordination,
-              accuracy, and delivery speed across architectural, structural, and
-              MEP scopes.
+              We plug into your BIM environment as a{" "}
+              <strong>nearshore Revit production partner</strong>, delivering
+              disciplined models that match your templates, naming conventions,
+              worksets and shared coordinates. From schematic through as-built,
+              we keep your Revit content lean, coordinated and clash-ready.
             </p>
 
             <h3 className="mt-6 font-extrabold text-white">What we deliver:</h3>
             <ul className="mt-3 space-y-2 text-neutral-300 list-disc pl-5">
               <li>
                 <span className="font-semibold text-white">
-                  Detailed Models:
+                  LOD-based models:
                 </span>{" "}
-                Accurate 3D models for clear visualisation and coordination.
+                Authoring and upgrading models to the required{" "}
+                <strong>LOD 100–400/500</strong> for Arch / Struct / MEP.
               </li>
               <li>
                 <span className="font-semibold text-white">
-                  As-Built Models:
+                  Revit families & content:
                 </span>{" "}
-                Models that reflect the exact specifications of completed works.
-              </li>
-              <li>
-                <span className="font-semibold text-white">Shop Drawings:</span>{" "}
-                Fabrication and installation drawings with standards and
-                conventions.
+                Custom families, types and parameters aligned with your
+                libraries and standards.
               </li>
               <li>
                 <span className="font-semibold text-white">
-                  Construction Documentation:
+                  Sheets, views & schedules:
                 </span>{" "}
-                Full drawing/sheet sets and schedules to support the build
-                phase.
+                View templates, sheets, filters and schedules configured for
+                CDs, coordination and quantities.
+              </li>
+              <li>
+                <span className="font-semibold text-white">
+                  As-built / record models:
+                </span>{" "}
+                Models updated from redlines, RFIs, field changes and point
+                clouds for closeout and FM.
+              </li>
+              <li>
+                <span className="font-semibold text-white">
+                  BIM 360 / ACC workflows:
+                </span>{" "}
+                Collaboration with cloud worksharing, model publishing and issue
+                tracking.
               </li>
             </ul>
           </div>
@@ -384,53 +410,67 @@ export default function RevitPage() {
         <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-10">
           <div>
             <h3 className="text-xl font-extrabold mb-3">
-              Exceeding client expectations
+              Designed for production, not just visuals
             </h3>
             <p className="text-neutral-700">
-              We use advanced technology and proven methodologies to deliver
-              high-quality, standards-compliant BIM models that streamline
-              design, construction, and operations.
+              Our focus is on{" "}
+              <strong>constructible, maintainable models</strong>. We respect
+              your office standards, coordinate closely with design teams and
+              keep models lean so they perform well in BIM 360, Navisworks and
+              on-site devices.
             </p>
           </div>
 
           <div className="border-t md:border-t-0 md:border-l border-neutral-200 md:pl-8 pt-6 md:pt-0">
             <h4 className="font-extrabold text-lg mb-2">
-              Efficiency and Accuracy
+              Efficiency and accuracy
             </h4>
             <ul className="list-disc pl-5 space-y-1 text-neutral-700">
-              <li>Quick turnaround supported by robust modelling workflows</li>
-              <li>Reliable quantity takeoffs for cost management</li>
+              <li>Repeatable modeling workflows aligned with your BEP.</li>
               <li>
-                Fewer changes and better budget control through coordination
+                Solid <strong>quantity takeoffs</strong> and schedules for cost
+                and phasing.
+              </li>
+              <li>
+                Fewer surprises in the field thanks to clash-ready geometry and
+                coordination.
               </li>
             </ul>
 
             <h4 className="font-extrabold text-lg mt-5 mb-2">
-              Comprehensive Solutions
+              Comprehensive Revit solutions
             </h4>
             <ul className="list-disc pl-5 space-y-1 text-neutral-700">
-              <li>Tailored models: architectural, structural, and MEP</li>
-              <li>Coverage from conceptual to as-built</li>
-              <li>Capability for complex, multi-phase projects</li>
+              <li>
+                Support across <strong>Arch / Struct / MEP</strong> scopes.
+              </li>
+              <li>
+                From concept massing to{" "}
+                <strong>record / as-built models</strong>.
+              </li>
+              <li>
+                Interoperability with CAD, Civil 3D, IFC and Navisworks for
+                broader project teams.
+              </li>
             </ul>
 
             <div className="mt-6 space-y-3">
               {[
                 {
-                  q: "Comprehensive Revit Models",
-                  a: "Disciplined models with parameters, views, sheets, and schedules aligned to project standards for reliable coordination and takeoffs.",
+                  q: "How do you handle LOD and standards?",
+                  a: "We start with your BIM Execution Plan, templates and sample sheets to define LOD, naming, worksets and model breakdown before production begins.",
                 },
                 {
-                  q: "Our Modelling Process",
-                  a: "Kickoff and standards → Level-of-Development plan → Iterative modelling → QA/QC and clash review → Package delivery.",
+                  q: "What is your typical Revit modeling process?",
+                  a: "Standards & scope → LOD plan → Core model setup → Iterative modeling & reviews → QA/QC & clash review → Package delivery & publishing to BIM 360/ACC.",
                 },
                 {
-                  q: "Advanced Technology and Expertise",
-                  a: "Experienced team leveraging Revit, Navisworks, and interoperability with Civil 3D, IFC, and CAD for smooth collaboration.",
+                  q: "Which deliverables can we expect?",
+                  a: "RVT models, linked models, NWC/NWD, IFC, PDFs for sheets, and Excel/CSV exports for schedules and quantities as required.",
                 },
                 {
-                  q: "FAQs for Revit Modelling",
-                  a: "We support LOD100-500, shared coordinates, and custom deliverables (NWC, RVT, IFC, sheets/PDF, quantity schedules).",
+                  q: "Do you work directly in BIM 360 / ACC?",
+                  a: "Yes. We can join your CDE, follow your permissions structure, and work with issue tracking and review workflows already in place.",
                 },
               ].map((item, i) => (
                 <details
@@ -453,21 +493,19 @@ export default function RevitPage() {
         <div className="container mx-auto max-w-5xl text-center">
           <div className="text-[#D9FF00] text-4xl leading-none mb-4">“</div>
           <p className="max-w-3xl mx-auto">
-            “DIQUE is dedicated to providing exceptional Revit Modelling
-            Services that enhance the efficiency and accuracy of your
-            construction projects. Our professional team, advanced technology,
-            and comprehensive range of services ensure your project is completed
-            with the highest standards of quality and precision.”
+            “DIQUE is dedicated to providing Revit modeling services that make
+            BIM practical for project delivery. Our team builds disciplined
+            models, aligned with US standards and your office templates, so your
+            coordinators, estimators and field teams can trust what they see.”
           </p>
           <div className="mt-6 text-sm text-neutral-400 font-semibold">
-            <br />
             Director, DIQUE Consultoría
           </div>
         </div>
       </section>
 
       {/* Contact block (mapa izquierda / formulario derecha) */}
-      <section className="py-16 px-4 bg-[#D9FF00]">
+      <section id="revit-contact" className="py-16 px-4 bg-[#D9FF00]">
         <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-start">
           {/* Mapa a la izquierda */}
           <div className="rounded-2xl overflow-hidden border border-neutral-200 bg-white">
@@ -491,17 +529,16 @@ export default function RevitPage() {
   group-hover:shadow-none"
           >
             <h3 className="text-4xl md:text-5xl font-black leading-tight tracking-tight">
-              Enquire about our
+              See LOD examples & <br />
+              enquire about our
               <br />
-              Revit Modelling
-              <br />
-              service
+              Revit modeling service
             </h3>
 
             <p className="text-neutral-800/90 mt-4 max-w-xl">
-              Ready to experience precision and reliability? Our team is here to
-              provide you with the most accurate and detailed Revit models
-              available.
+              Share your scope, markets and typical LOD requirements. We’ll send
+              you relevant LOD examples and schedule a short call to review how
+              we can support your Revit production.
             </p>
 
             <form
@@ -553,7 +590,7 @@ export default function RevitPage() {
                 </label>
                 <input
                   name="subject"
-                  placeholder="Revit Modelling enquiry"
+                  placeholder="Revit modeling enquiry"
                   className="mt-2 w-full bg-transparent rounded-none cursor-text border-0 border-b border-neutral-900 px-0 py-2 caret-neutral-900 selection:bg-neutral-900/10 focus:outline-none focus:ring-0 focus:shadow-none focus:border-0 focus:border-b-2 focus:border-black"
                 />
               </div>
@@ -568,6 +605,7 @@ export default function RevitPage() {
                   rows={4}
                   required
                   className="mt-2 w-full bg-transparent rounded-none cursor-text border-0 border-b border-neutral-900 px-0 py-2 resize-none caret-neutral-900 selection:bg-neutral-900/10 focus:outline-none focus:ring-0 focus:shadow-none focus:border-0 focus:border-b-2 focus:border-black"
+                  placeholder="Tell us about your discipline (Arch/Struct/MEP), LOD targets, templates and deadlines."
                 />
               </div>
 
@@ -616,7 +654,7 @@ export default function RevitPage() {
                   disabled={loading}
                   className="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 disabled:opacity-60 text-white font-extrabold tracking-wider uppercase px-8 py-4 rounded-none shadow-none hover:shadow-none focus:shadow-none"
                 >
-                  {loading ? "SENDING…" : "SEND MESSAGE"}
+                  {loading ? "SENDING…" : "SEE LOD EXAMPLES & ENQUIRE"}
                 </button>
               </div>
             </form>

@@ -1,4 +1,4 @@
-﻿// src/pages/App.tsx
+﻿// src/App.tsx
 import { useState } from "react";
 import {
   Building2,
@@ -138,109 +138,43 @@ export default function App() {
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-8 animate-fade-in">
+            {/* Headline corta en el pill */}
             <div className="inline-block">
               <span className="text-sm font-bold text-[#00ACBD] uppercase tracking-widest px-4 py-2 bg-[#00ACBD]/10 rounded-full border border-[#00ACBD]/30">
-                Services in the United States
+                Engineering-grade CAD, Revit &amp; BIM—delivered fast, done
+                right.
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-neutral-900 leading-tight">
-              Specialized Technical Services
-              <br />
-              <span className="bg-gradient-to-r from-[#00ACBD] via-[#008BBE] to-[#0077BE] bg-clip-text text-transparent">
-                Combining Precision & Innovation
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed font-medium">
-              Our portfolio is designed to support architecture, engineering,
-              construction, and territorial planning projects with high-quality
-              deliverables and collaborative workflows
-            </p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-8">
-              <Button
-                size="lg"
-                className="shadow-2xl text-base"
-                onClick={() =>
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base"
-                onClick={() =>
-                  document
-                    .getElementById("about")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
-            {[
-              {
-                value: "500+",
-                label: "Projects Delivered",
-                icon: Target,
-                color: "#00ACBD",
-              },
-              {
-                value: "15+",
-                label: "Years Experience",
-                icon: Award,
-                color: "#0077BE",
-              },
-              {
-                value: "100+",
-                label: "Happy Clients",
-                icon: Users,
-                color: "#008BBE",
-              },
-              {
-                value: "4",
-                label: "Core Services",
-                icon: Zap,
-                color: "#ED1844",
-              },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-transparent hover:border-[#00ACBD]/30 transition-all duration-300 card-hover group"
-                style={{ boxShadow: `0 10px 30px -10px ${stat.color}20` }}
-              >
-                <div className="flex justify-center mb-3">
-                  <div
-                    className="p-3 rounded-xl"
-                    style={{
-                      background: `linear-gradient(135deg, ${stat.color}15, ${stat.color}05)`,
-                    }}
-                  >
-                    <stat.icon
-                      className="h-6 w-6"
-                      style={{ color: stat.color }}
-                    />
-                  </div>
-                </div>
-                <div
-                  className="text-4xl md:text-5xl font-black mb-2 bg-gradient-to-br bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${stat.color}, ${stat.color}dd)`,
-                  }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-xs md:text-sm text-neutral-600 font-semibold">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+            {/* Primary H1 SEO */}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-neutral-900 leading-tight">
+              CAD, Revit &amp; BIM services for US AEC teams
+            </h1>
+
+            {/* Subhead / value prop */}
+            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed font-medium">
+              We help US architects, engineers and contractors cut drafting time
+              and costs with precise CAD, Revit modeling, BIM coordination and
+              GIS support—on your schedule, to your standards.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-8">
+              {/* Primary CTA: va a la página de contacto */}
+              <Button size="lg" className="shadow-2xl text-base" asChild>
+                <a href="#/contact" aria-label="Get a 30-minute project review">
+                  Get a 30-minute project review
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+
+              {/* Secondary CTA: por ahora baja a la sección de servicios */}
+              <Button size="lg" variant="outline" className="text-base" asChild>
+                <a href="#services" aria-label="Download sample drawings">
+                  Download sample drawings
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -252,25 +186,21 @@ export default function App() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-neutral-900 mb-4">
-              Our{" "}
-              <span className="bg-gradient-to-r from-[#00ACBD] to-[#0077BE] bg-clip-text text-transparent">
-                Services
-              </span>
+              CAD, Revit, BIM &amp; GIS services
             </h2>
             <p className="text-xl text-neutral-600 max-w-2xl mx-auto font-medium">
-              Comprehensive solutions for architecture, engineering, and
-              construction projects
+              Near-shore CAD drafting, Revit modeling, BIM coordination and GIS
+              support for US architects, engineers and contractors.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* CAD Services */}
+            {/* CAD Drafting */}
             <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
-              {/* media */}
               <div className="aspect-[16/9] w-full">
                 <img
                   src={cadImg}
-                  alt="CAD services - DIQUE"
+                  alt="CAD drafting services - DIQUE"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
@@ -282,22 +212,20 @@ export default function App() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-neutral-900 mb-4 group-hover:text-[#00ACBD] transition-colors">
-                    1. CAD Services
+                    CAD Drafting
                   </h3>
                   <p className="text-neutral-600 mb-6 leading-relaxed">
-                    We deliver comprehensive CAD solutions tailored to meet the
-                    demands of modern infrastructure and building projects. Our
-                    expertise spans MEP CAD Drafting, CAD to Revit conversions,
-                    3D CAD Modeling, Civil 3D applications, Design Development,
-                    and Construction Documentation.
+                    Construction docs, shop drawings and redlines/as-builts
+                    produced to your AutoCAD standards—layers, pen tables and
+                    title blocks exactly as you specify.
                   </p>
                   <ul className="space-y-3">
                     {[
-                      "MEP CAD Drafting",
-                      "CAD to Revit Conversions",
-                      "3D CAD Modeling",
-                      "Civil 3D Applications",
-                      "Construction Documentation",
+                      "Construction documents and addenda",
+                      "Shop drawings ready for fabrication and install",
+                      "Redlines and as-builts from markups or PDFs",
+                      "Client-specific layers, linetypes and plot styles",
+                      "Title blocks, page setups and viewports to spec",
                     ].map((item, idx) => (
                       <li
                         key={idx}
@@ -312,9 +240,12 @@ export default function App() {
                   </ul>
 
                   <div className="mt-6">
-                    <Button asChild className="mt-6">
-                      <a href="#/services/cad" aria-label="View service CAD">
-                        View service
+                    <Button asChild className="mt-2">
+                      <a
+                        href="#/services/cad"
+                        aria-label="View CAD drafting details"
+                      >
+                        See CAD details
                       </a>
                     </Button>
                   </div>
@@ -322,12 +253,12 @@ export default function App() {
               </div>
             </Card>
 
-            {/* REVIT Modelling Services */}
+            {/* Revit Modeling */}
             <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
               <div className="aspect-[16/9] w-full">
                 <img
                   src={revitImg}
-                  alt="Revit Modelling - DIQUE"
+                  alt="Revit modeling services - DIQUE"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
@@ -339,22 +270,20 @@ export default function App() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-neutral-900 mb-4 group-hover:text-[#0077BE] transition-colors">
-                    2. REVIT Modelling Services
+                    Revit Modeling
                   </h3>
                   <p className="text-neutral-600 mb-6 leading-relaxed">
-                    Our Revit Modelling Services empower clients to visualize
-                    and manage their projects with precision and efficiency. We
-                    develop intelligent 3D models that integrate architectural,
-                    structural, and MEP components, fostering collaboration and
-                    informed decision-making.
+                    LOD-appropriate Revit models for Arch/Struct/MEP, including
+                    families, sheets and schedules. Clean, clash-ready geometry
+                    that drops straight into your BIM 360 or ACC workflows.
                   </p>
                   <ul className="space-y-3">
                     {[
-                      "Intelligent 3D Models",
-                      "Architectural Integration",
-                      "Structural Components",
-                      "MEP Coordination",
-                      "Lifecycle Management",
+                      "LOD-appropriate models for Arch / Struct / MEP",
+                      "Custom and standard Revit families",
+                      "Sheets, views and schedules ready to publish",
+                      "Shared coordinates and view templates aligned to your setup",
+                      "Clean, clash-ready geometry for coordination",
                     ].map((item, idx) => (
                       <li
                         key={idx}
@@ -374,7 +303,8 @@ export default function App() {
                         href="#/services/revit"
                         className="inline-flex items-center"
                       >
-                        View service <ArrowRight className="ml-2 h-4 w-4" />
+                        See Revit examples{" "}
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -382,12 +312,12 @@ export default function App() {
               </div>
             </Card>
 
-            {/* BIM Services */}
+            {/* BIM Coordination */}
             <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
               <div className="aspect-[16/9] w-full">
                 <img
                   src={bimImg}
-                  alt="BIM Services - DIQUE"
+                  alt="BIM coordination services - DIQUE"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
@@ -399,22 +329,20 @@ export default function App() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-neutral-900 mb-4 group-hover:text-[#008BBE] transition-colors">
-                    3. BIM Services
+                    BIM Coordination
                   </h3>
                   <p className="text-neutral-600 mb-6 leading-relaxed">
-                    We lead the way in Building Information Modeling (BIM),
-                    offering cutting-edge solutions that transform how projects
-                    are planned, executed, and maintained. Our BIM services
-                    provide dynamic, data-rich models that enhance coordination,
-                    reduce risks, and improve project outcomes.
+                    Clash detection, issue tracking and model federation for
+                    busy project teams. Navisworks and BIM 360 workflows with
+                    clear weekly coordination reports.
                   </p>
                   <ul className="space-y-3">
                     {[
-                      "BIM Strategy Development",
-                      "Data-Rich Models",
-                      "Coordination Enhancement",
-                      "Risk Reduction",
-                      "Sustainability Standards",
+                      "Model federation across disciplines",
+                      "Clash detection runs and filtered viewpoints",
+                      "Issue logs with assignees and due dates",
+                      "Weekly coordination and clash status reports",
+                      "Owner/GC-friendly exports for meetings",
                     ].map((item, idx) => (
                       <li
                         key={idx}
@@ -433,9 +361,10 @@ export default function App() {
                       <a
                         href="#/services/bim"
                         className="inline-flex items-center"
-                        aria-label="View BIM service"
+                        aria-label="View BIM coordination details"
                       >
-                        View service <ArrowRight className="ml-2 h-4 w-4" />
+                        See coordination details{" "}
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -443,12 +372,12 @@ export default function App() {
               </div>
             </Card>
 
-            {/* GIS Services */}
+            {/* GIS Support */}
             <Card className="group hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
               <div className="aspect-[16/9] w-full">
                 <img
                   src={gisImg}
-                  alt="GIS Services - DIQUE"
+                  alt="GIS support services - DIQUE"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
@@ -460,23 +389,20 @@ export default function App() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-neutral-900 mb-4 group-hover:text-[#ED1844] transition-colors">
-                    4. Geographic Information System Services
+                    GIS Support
                   </h3>
                   <p className="text-neutral-600 mb-6 leading-relaxed">
-                    Our Geographic Information System (GIS) Services offer
-                    powerful tools for spatial analysis, planning, and
-                    decision-making. We specialize in Basic Cartography,
-                    Landscape Analysis, and comprehensive GIS solutions that
-                    support urban development, environmental management, and
-                    tourism planning.
+                    Base mapping, spatial analysis and site planning layers that
+                    help civil, utilities and environmental teams decide with
+                    confidence.
                   </p>
                   <ul className="space-y-3">
                     {[
-                      "Basic Cartography",
-                      "Landscape Analysis",
-                      "Urban Development",
-                      "Environmental Management",
-                      "Tourism Planning",
+                      "Base maps and thematic layers for projects",
+                      "Suitability and spatial analysis for sites and corridors",
+                      "Site planning overlays for civil and utilities",
+                      "Environmental and risk overlays for decision-makers",
+                      "Deliverables ready for web maps and dashboards",
                     ].map((item, idx) => (
                       <li
                         key={idx}
@@ -496,13 +422,148 @@ export default function App() {
                         href="#/services/gis"
                         className="inline-flex items-center"
                       >
-                        View service <ArrowRight className="ml-2 h-4 w-4" />
+                        See GIS examples <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </div>
                 </div>
               </div>
             </Card>
+          </div>
+
+          {/* CTA inline: example sets */}
+          <div className="mt-12 text-center">
+            <Button variant="outline" asChild>
+              <a href="#/contact">See example sets</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why teams choose DIQUE */}
+      <section
+        id="why-dique"
+        className="py-20 px-4 bg-neutral-950 text-neutral-100"
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-black mb-4">
+                Why teams choose DIQUE
+              </h2>
+              <p className="text-neutral-300 text-sm md:text-base">
+                Built for US AEC teams that need reliable, near-shore production
+                support—without sacrificing standards or control.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 text-[#D9FF00] text-xs font-bold uppercase tracking-wide">
+                  <CheckCircle2 className="h-4 w-4" />
+                  US standards, zero rework
+                </div>
+                <p className="text-sm text-neutral-300">
+                  CSI divisioning, sheet naming, view templates and detail
+                  levels aligned to your CAD/BIM manuals—so drawings come back
+                  ready to issue.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 text-[#D9FF00] text-xs font-bold uppercase tracking-wide">
+                  <Zap className="h-4 w-4" />
+                  Near-shore speed
+                </div>
+                <p className="text-sm text-neutral-300">
+                  Bilingual team in US-friendly time zones, with same-day
+                  communication and quick turnaround on RFIs, addenda and
+                  redlines.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 text-[#D9FF00] text-xs font-bold uppercase tracking-wide">
+                  <Target className="h-4 w-4" />
+                  Right-sized pricing
+                </div>
+                <p className="text-sm text-neutral-300">
+                  Flexible hourly blocks or monthly capacity so you can ramp up
+                  or down without long-term commitments.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 text-[#D9FF00] text-xs font-bold uppercase tracking-wide">
+                  <Award className="h-4 w-4" />
+                  Secure &amp; compliant
+                </div>
+                <p className="text-sm text-neutral-300">
+                  NDA by default, controlled access to models and an auditable
+                  trail when collaborating through BIM 360 or ACC.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <Button
+              asChild
+              className="bg-white text-black hover:bg-white/90 font-extrabold px-6"
+            >
+              <a href="#/contact">Book a call</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How we work */}
+      <section
+        id="how-we-work"
+        className="py-20 px-4 bg-gradient-to-b from-white to-slate-50"
+      >
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-black mb-6">How we work</h2>
+          <p className="text-neutral-600 max-w-2xl mb-10">
+            A simple 4-step process to plug our team into your CAD, Revit and
+            BIM workflows.
+          </p>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                step: 1,
+                title: "Scope & standards",
+                desc: "Review samples, CAD/Revit templates, LOD requirements, deadlines and communication channels.",
+              },
+              {
+                step: 2,
+                title: "Pilot",
+                desc: "8–40 hours on a real package so we can match your look & feel before committing to volume.",
+              },
+              {
+                step: 3,
+                title: "Production",
+                desc: "Daily progress updates, weekly coordination/clash reports and predictable delivery windows.",
+              },
+              {
+                step: 4,
+                title: "Deliver & iterate",
+                desc: "QC checklist applied on every set and punch-list turnarounds in 24–48 hours.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="h-full">
+                <Card className="h-full p-6 bg-white border-2 border-transparent hover:border-[#00ACBD]/30 transition-all shadow-sm">
+                  <div className="text-xs font-bold text-[#00ACBD] tracking-[0.12em] uppercase mb-2">
+                    Step {item.step}
+                  </div>
+                  <h3 className="font-extrabold text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-700 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>

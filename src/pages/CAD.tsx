@@ -98,21 +98,27 @@ export default function CADPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-bold text-[#ED1844] uppercase tracking-wider mb-2">
-                17+ years of experience
+                Nearshore CAD drafting for US AEC teams
               </p>
               <h1 className="text-4xl md:text-5xl font-black leading-tight">
-                <span className="text-[#00ACBD]">CAD</span> Services – 2D/3D
-                technical drafting with precision and integration for AEC
-                projects
+                <span className="text-[#00ACBD]">CAD drafting</span> services
+                for US architects, engineers & contractors
               </h1>
               <p className="mt-4 text-neutral-600 text-lg">
-                End-to-end drafting and technical documentation for residential,
-                commercial, and infrastructure projects—ready to interoperate
-                with your BIM workflows.
+                We produce clean, construction-ready{" "}
+                <strong>CD sets, shop drawings and redlines/as-builts</strong>{" "}
+                that match your layers, pen tables and title blocks—no
+                surprises. Near-shore team in your time zone, aligned with{" "}
+                <strong>US standards (NCS, CSI, client CAD manuals)</strong> and
+                ready to plug into your BIM workflows.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button size="lg">
-                  Request a quote <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" asChild>
+                  {/* Lleva al contacto para solicitar el sample CD set */}
+                  <a href="#/contact">
+                    Download a sample CD set
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <a href="#/">Back to home</a>
@@ -125,25 +131,25 @@ export default function CADPage() {
               {[
                 {
                   value: "25+",
-                  label: "Countries served",
+                  label: "US & global clients served",
                   icon: Target,
                   color: "#00ACBD",
                 },
                 {
                   value: "5000+",
-                  label: "Projects delivered",
+                  label: "Sheets & CD sets drafted",
                   icon: Award,
                   color: "#0077BE",
                 },
                 {
                   value: "17+",
-                  label: "Years of experience",
+                  label: "Years in AEC production",
                   icon: Users,
                   color: "#008BBE",
                 },
                 {
-                  value: "300+",
-                  label: "Happy clients",
+                  value: "24–72h",
+                  label: "Turnarounds for RFIs/addenda",
                   icon: Zap,
                   color: "#ED1844",
                 },
@@ -177,13 +183,22 @@ export default function CADPage() {
       {/* Intro / Main copy */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-black mb-6">CAD Services</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
+            CAD drafting services for AEC
+          </h2>
           <p className="text-neutral-700 leading-relaxed">
-            We provide comprehensive CAD drafting services for the architecture,
-            engineering, and construction sectors. We produce precise 2D plans
-            and 3D models, convert paper/legacy drawings to CAD, and prepare
-            documentation for construction, as-built packages, and scan-to-CAD—
-            meeting industry standards and best practices.
+            We support US-based architects, engineers and contractors with{" "}
+            <strong>production-ready CAD drafting</strong>. From permit and
+            construction documents to shop drawings and{" "}
+            <strong>as-builts</strong>, our team works in your templates and
+            standards so lineweights, layers and title blocks feel like they
+            were produced in-house. We deliver{" "}
+            <strong>
+              CD sets, shop drawings, redlines/as-builts and takeoff-friendly
+              linework
+            </strong>{" "}
+            aligned with{" "}
+            <strong>CSI divisioning, NCS and client CAD manuals</strong>.
           </p>
         </div>
       </section>
@@ -196,28 +211,55 @@ export default function CADPage() {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* 3 */}
+            {/* 01 */}
             <Card className="bg-neutral-900 border-neutral-800 p-6">
-              <p className="text-[#ED1844] text-xs font-bold mb-2">03.</p>
+              <p className="text-[#ED1844] text-xs font-bold mb-2">01.</p>
               <h4 className="text-white font-black text-lg mb-3">
-                MEP CAD Drafting
+                Architectural & interiors CD sets
               </h4>
               <p className="text-neutral-300 text-sm leading-relaxed">
-                HVAC, electrical, plumbing, and fire protection drawings with
-                standardized layers/symbols, coordination deliverables, and shop
-                drawings.
+                Plans, elevations, sections and details drafted to your CAD
+                standards for permit, bid and construction. Layering, view
+                organization and sheet naming aligned to your office templates.
               </p>
             </Card>
 
-            {/* 4 */}
+            {/* 02 */}
+            <Card className="bg-neutral-900 border-neutral-800 p-6">
+              <p className="text-[#ED1844] text-xs font-bold mb-2">02.</p>
+              <h4 className="text-white font-black text-lg mb-3">
+                Structural CAD drafting
+              </h4>
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                Framing plans, rebar layouts and connection details coordinated
+                with architectural backgrounds and engineer mark-ups. Clear,
+                takeoff-ready linework for fabricators and site teams.
+              </p>
+            </Card>
+
+            {/* 03 */}
+            <Card className="bg-neutral-900 border-neutral-800 p-6">
+              <p className="text-[#ED1844] text-xs font-bold mb-2">03.</p>
+              <h4 className="text-white font-black text-lg mb-3">
+                MEP CAD drafting
+              </h4>
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                HVAC, electrical, plumbing and fire protection drawings using
+                standardized symbols, layers and device tags. Ready for
+                coordination, shop drawings and BIM integration.
+              </p>
+            </Card>
+
+            {/* 04 */}
             <Card className="bg-neutral-900 border-neutral-800 p-6">
               <p className="text-[#ED1844] text-xs font-bold mb-2">04.</p>
               <h4 className="text-white font-black text-lg mb-3">
-                Mechanical CAD Drafting
+                Redlines, as-builts & scan-to-CAD
               </h4>
               <p className="text-neutral-300 text-sm leading-relaxed">
-                Part and assembly drawings—fabrication and assembly packages
-                with tolerances and industrial conventions.
+                Fast turnarounds for redlines, RFIs, addenda and as-built
+                updates. We also convert paper or markups to clean CAD and
+                generate CAD from point clouds as a bridge to BIM.
               </p>
             </Card>
           </div>
@@ -229,19 +271,22 @@ export default function CADPage() {
         <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-10">
           <div>
             <h3 className="text-2xl md:text-3xl font-black mb-4">
-              What are CAD services?
+              What does our CAD team handle?
             </h3>
             <p className="text-neutral-700 leading-relaxed">
-              CAD (Computer-Aided Design) enables the design and documentation
-              of products and buildings using standardized symbols, lines, and
-              drawings. In AEC, it supports 2D/3D development, speeds up
-              reviews, and serves as a bridge to BIM by standardizing geometry
-              and metadata.
+              CAD (Computer-Aided Design) is still the backbone of{" "}
+              <strong>day-to-day project delivery</strong> for US AEC teams. We
+              support you with clear 2D linework for permit sets, shop drawings
+              and as-builts, plus 3D views where needed. A strong CAD standard
+              keeps your Revit/BIM models coordinated and constructible while
+              giving GCs, subs and inspectors the documentation they expect.
             </p>
           </div>
 
           <Card className="p-6">
-            <h4 className="font-bold text-lg mb-4">Contact us</h4>
+            <h4 className="font-bold text-lg mb-4">
+              Talk to our CAD production lead
+            </h4>
             <form className="grid grid-cols-1 gap-3">
               <input
                 className="border rounded-lg px-3 py-2"
@@ -249,18 +294,20 @@ export default function CADPage() {
               />
               <input
                 className="border rounded-lg px-3 py-2"
-                placeholder="Email address"
+                placeholder="Work email"
               />
               <input
                 className="border rounded-lg px-3 py-2"
-                placeholder="Phone number"
+                placeholder="Firm / company"
               />
               <textarea
                 className="border rounded-lg px-3 py-2"
-                placeholder="Message"
+                placeholder="Tell us about your CAD standards, templates and typical deliverables."
                 rows={4}
               />
-              <Button className="justify-center">Send message</Button>
+              <Button className="justify-center">
+                Book a 30-minute project review
+              </Button>
             </form>
           </Card>
         </div>

@@ -184,6 +184,9 @@ export default function GISPage() {
         <div className="container mx-auto max-w-7xl px-4 py-32">
           <div className="min-h-[60vh] flex flex-col justify-center">
             <AnimatedDownText key={animateKey} text={words[idx]} />
+            <p className="mt-4 text-sm font-semibold tracking-[0.18em] text-white/70 uppercase">
+              Urban • Environmental • Tourism GIS
+            </p>
             <div className="mt-6 h-[8px] w-40 md:w-48 bg-white/95 rounded-full origin-left animate-[grow_700ms_ease-out]" />
             <p className="mt-8 max-w-3xl text-white/80 text-lg md:text-xl leading-relaxed">
               Geographic Information System (GIS) services to{" "}
@@ -191,7 +194,8 @@ export default function GISPage() {
               <span className="text-white font-semibold"> analyze</span> and{" "}
               <span className="text-white font-semibold">decide</span> with
               clarity. We transform spatial data into actionable insights for
-              planning, design and operations.
+              planning, design and operations as a nearshore GIS partner for US
+              AEC and planning teams.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button
@@ -251,7 +255,7 @@ export default function GISPage() {
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6">
-            Geographic Information System Services
+            GIS for urban, environmental & tourism planning
           </h2>
 
           <p className="text-neutral-700 text-lg leading-relaxed">
@@ -276,7 +280,7 @@ export default function GISPage() {
       >
         <div className="container mx-auto max-w-6xl">
           <h3 className="text-3xl md:text-4xl font-black mb-10">
-            What we deliver
+            GIS services we deliver
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -312,6 +316,7 @@ export default function GISPage() {
                 "Land-use, zoning & mobility layers",
                 "Scenario planning & impact analysis",
                 "Regulatory maps & public display",
+                "GIS layers ready for CAD / BIM integration",
               ]}
               color="#008BBE"
             />
@@ -344,9 +349,9 @@ export default function GISPage() {
           <div className="mt-12">
             <Button
               asChild
-              className="bg-neutral-900 hover:bg-neutral-800 text-white px-6"
+              className="bg-neutral-900 hover:bg-neutral-800 text-white px-6 font-extrabold"
             >
-              <a href="#/contact">Request a proposal</a>
+              <a href="#/contact">Book a GIS project review</a>
             </Button>
           </div>
         </div>
